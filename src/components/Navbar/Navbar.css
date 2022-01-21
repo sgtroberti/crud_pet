@@ -1,0 +1,8 @@
+.nav {
+  display: flex;
+  padding-right: 4rem;
+}
+
+.nav-navbar {
+  width: 9rem;
+}
