@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth } from "../../context/auth-context";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./AuthStatus.css";
 
 function AuthStatus() {
@@ -10,7 +10,7 @@ function AuthStatus() {
   if (!auth.user) {
     return (
       <div className="auth">
-        <button className="auth-button" onClick={() => navigate("/login")}>
+        <button className="button__green" onClick={() => navigate("/login")}>
           Login
         </button>
       </div>
@@ -20,7 +20,7 @@ function AuthStatus() {
     <div className="auth">
       <p className="auth-message">Bem vindo {auth.user.name}!</p>
       <button
-        className="auth-button"
+        className="button__green"
         onClick={() => {
           auth.logout(() => navigate("/"));
         }}

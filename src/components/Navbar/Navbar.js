@@ -1,17 +1,23 @@
-import { Fragment } from "react/cjs/react.production.min";
 import { Link, Outlet } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import AuthStatus from "../AuthStatus/AuthStatus";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   const auth = useAuth();
+  const navigate = useNavigate();
 
   const protectedLinks = () => {
     if (auth.user) {
       return (
         <li className="navbar-menu-link">
-          <Link to="/petForm">Novo Pet</Link>
+          <button
+            className="button__green"
+            onClick={() => navigate("/petForm")}
+          >
+            Novo Pet
+          </button>
         </li>
       );
     }
@@ -24,7 +30,9 @@ function Navbar() {
         <div className="nav-navbar">
           <ul className="nav-navbar-menu">
             <li className="nav-navbar-menu-link">
-              <Link to="/">Home</Link>
+              <button className="button__green" onClick={() => navigate("/")}>
+                Home
+              </button>
             </li>
             {protectedLinks()}
           </ul>

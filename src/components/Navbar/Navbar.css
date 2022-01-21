@@ -5,4 +5,24 @@
 
 .nav-navbar {
   width: 9rem;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  background-color: #93ca9fc2;
+}
+
+.nav-navbar-menu {
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.nav-navbar-menu-link {
+  margin: 1.5rem;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.nav-content {
+  padding-left: 12rem;
+  padding-top: 3rem;
 }

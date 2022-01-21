@@ -12,3 +12,19 @@
 img {
   max-width: 200px;
 }
+
+.button__green {
+  font-size: 1.25rem;
+  padding: 0.3rem;
+  background-color: #84a98c;
+  border: 1px solid #52796f;
+  border-radius: 5px;
+  color: white;
+  width: 6rem;
+}
+
+.button__green:hover {
+  background-color: #cad2c5;
+  border: 1px solid #71a799;
+  transition: 0.3s;
+}
