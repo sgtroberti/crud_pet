@@ -1,5 +1,6 @@
 import { useAuth } from "../context/auth-context";
 import { useLocation, useNavigate } from "react-router-dom";
+import LoginForm from "../components/LoginForm/LoginForm";
 
 function Login() {
   const auth = useAuth();
@@ -24,17 +25,9 @@ function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          email: <input type="email" name="email" />
-        </label>
-        <label>
-          senha: <input type="password" name="password" />
-        </label>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <LoginForm />
+    </form>
   );
 }
 
