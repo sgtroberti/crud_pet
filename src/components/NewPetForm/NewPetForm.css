@@ -1,0 +1,35 @@
+.new-pet-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid darkgreen;
+  border-radius: 1rem;
+  position: absolute;
+  left: 40%;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-pet-form label {
+  padding: 1rem;
+  width: 100%;
+}
+.new-pet-form input,
+select {
+  padding: 1rem;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.gender {
+  display: flex;
+  flex-direction: row;
+}
+
+.gender label {
+  padding: 0;
+}
+
+.button {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
