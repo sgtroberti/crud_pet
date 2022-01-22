@@ -28,3 +28,7 @@ img {
   border: 1px solid #71a799;
   transition: 0.3s;
 }
+
+.pet-cardlist {
+  display: flex;
+}

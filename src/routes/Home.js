@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PetCard from "../components/PetCard/PetCard";
 import { listPets } from "../services/pets";
 
 const Home = () => {
@@ -6,25 +7,26 @@ const Home = () => {
 
   useEffect(() => {
     const request = async () => {
-      const { data } = await listPets();
-      setPets(data.pets);
+      const { data, error } = await listPets();
+      data?.pets ? setPets(data.pets) : alert(error);
     };
     request();
   }, []);
 
-  console.log(pets);
   return (
-    <div className="">
+    <div className="pet-cardlist">
       {pets.map(({ id, name, breed, age, species, gender, url }) => {
         return (
-          <div key={id} className="pet">
-            <p>Nome: {name}</p>
-            <p>Raça: {breed}</p>
-            <p>Idade: {age}</p>
-            <p>Espécie: {species}</p>
-            <p>Gênero: {gender}</p>
-            <img src={url} alt="PetPhoto" />
-          </div>
+          <PetCard
+            key={id}
+            id={id}
+            name={name}
+            breed={breed}
+            age={age}
+            species={species}
+            gender={gender}
+            url={url}
+          />
         );
       })}
     </div>
